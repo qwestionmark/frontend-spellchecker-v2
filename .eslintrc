@@ -1,0 +1,6 @@
+{
+    "parser": "babel-eslint",
+    "extends": ["airbnb"],
+    // "rules" can be individually added or removed from your extended style guide
+    "rules": {}
+  }
