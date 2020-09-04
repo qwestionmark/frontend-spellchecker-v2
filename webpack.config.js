@@ -5,14 +5,14 @@ module.exports = {
     module: {
       rules: [
         {
-          test: /\.(js|jsx|tsx|ts)$/,
+          test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: ['babel-loader', 'eslint-loader']
         }
       ]
     },
     resolve: {
-      extensions: ['*', '.js', '.jsx', '.tsx', '.ts']
+      extensions: ['*', '.js', '.jsx']
     },
     output: {
       path: __dirname + '/dist',
