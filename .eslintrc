@@ -1,6 +1,8 @@
 {
-    "parser": "babel-eslint",
-    "extends": ["airbnb", "airbnb/hooks"],
-    // "rules" can be individually added or removed from your extended style guide
-    "rules": {}
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "airbnb/hooks"],
+  // "rules" can be individually added or removed from your extended style guide
+  "rules": {
+    "quotes": "off"
   }
+}
