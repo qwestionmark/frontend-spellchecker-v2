@@ -1,5 +1,7 @@
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
+const HtmlWebpackPLugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     entry: './src/index.jsx',
@@ -8,7 +10,7 @@ module.exports = {
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-          use: ['babel-loader', 'eslint-loader']
+          use: ['babel-loader', 'eslint-loader'],
         }
       ]
     },
@@ -23,6 +25,11 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new Dotenv(),
+        new HtmlWebpackPLugin({
+          title: 'Spell Checker | D&D SRD Game Assistant',
+          template: './src/index.html'
+        }),
+        new CleanWebpackPlugin(),
     ],
     devServer: {
       contentBase: './dist',
