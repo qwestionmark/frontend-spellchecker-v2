@@ -22,7 +22,7 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new Dotenv()
+        new Dotenv(),
     ],
     devServer: {
       contentBase: './dist',
