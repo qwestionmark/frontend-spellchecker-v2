@@ -1,4 +1,5 @@
 const webpack = require("webpack");
+const path = require("path");
 const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPLugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -26,7 +27,7 @@ module.exports = {
     extensions: ["*", ".js", ".jsx"],
   },
   output: {
-    path: __dirname + "/dist",
+    path: path.join(__dirname, "/dist"),
     publicPath: "/",
     filename: "bundle.js",
   },

@@ -4,5 +4,12 @@
   // "rules" can be individually added or removed from your extended style guide
   "rules": {
     "quotes": "off"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "document": false
   }
 }
