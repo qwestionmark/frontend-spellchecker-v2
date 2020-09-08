@@ -1,14 +1,17 @@
 import React from "react";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import SpellSearchbar from "./SpellSearchbar";
+
+console.log(process.env.GRAPHQL_URL);
 
 const client = new ApolloClient({
-  uri: process.env.GRAPHQL_URL,
+  uri: "http://localhost:7000/graphql",
   cache: new InMemoryCache(),
 });
 
 const App = () => (
   <ApolloProvider client={client}>
-    <p>hello</p>
+    <SpellSearchbar />
   </ApolloProvider>
 );
 
