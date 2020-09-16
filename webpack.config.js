@@ -21,6 +21,11 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.js$/,
+        enforce: "pre",
+        use: ["source-map-loader"],
+      },
     ],
   },
   resolve: {
@@ -33,7 +38,9 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new Dotenv(),
+    new Dotenv({
+      path: "./.env",
+    }),
     new HtmlWebpackPLugin({
       title: "Spell Checker | D&D SRD Game Assistant",
       template: "./src/index.html",
@@ -44,4 +51,5 @@ module.exports = {
     contentBase: "./dist",
     hot: true,
   },
+  devtool: "none",
 };
