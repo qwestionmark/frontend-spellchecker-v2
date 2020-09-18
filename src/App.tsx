@@ -1,7 +1,6 @@
 import React from "react";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
-import SpellResults from "./components/SpellResults/SpellResults";
-import SpellSearchbar from "./components/SpellSearchBar/SpellSearchbar";
+import SpellBook from "./pages/SpellBook";
 
 const client = new ApolloClient({
   uri: "http://localhost:7000/graphql",
@@ -10,8 +9,7 @@ const client = new ApolloClient({
 
 const App = () => (
   <ApolloProvider client={client}>
-    <SpellSearchbar />
-    <SpellResults />
+    <SpellBook />
   </ApolloProvider>
 );
 

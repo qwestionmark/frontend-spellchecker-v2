@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { TextField } from "@material-ui/core";
 
-const SpellSearchbar = () => {
-  const [searchName, setSearchName] = useState("");
-
+const SpellSearchbar = ({ onChangeName }) => {
   return (
     <form>
-      <TextField onChange={(e) => setSearchName(e.target.value)} label="Name" />
+      <TextField onChange={(e) => onChangeName(e.target.value)} label="Name" />
     </form>
   );
 };
