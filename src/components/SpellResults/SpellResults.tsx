@@ -29,12 +29,10 @@ const SpellResults = ({ searchName }) => {
   };
 
   useEffect(() => {
-    console.log("hit effect");
     if (data) {
       filterSpells();
     }
   }, [data, searchName, loading]);
-  console.log("render");
 
   return (
     <Grid container spacing={2} justify="center">

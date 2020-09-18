@@ -1,6 +1,7 @@
 import React from "react";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
-import SpellBook from "./pages/SpellBook";
+import { BrowserRouter } from "react-router-dom";
+import RouteSwitcher from "./pages/_RouteSwitcher";
 
 const client = new ApolloClient({
   uri: "http://localhost:7000/graphql",
@@ -9,7 +10,9 @@ const client = new ApolloClient({
 
 const App = () => (
   <ApolloProvider client={client}>
-    <SpellBook />
+    <BrowserRouter>
+      <RouteSwitcher />
+    </BrowserRouter>
   </ApolloProvider>
 );
 
