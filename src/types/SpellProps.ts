@@ -1,14 +1,14 @@
 interface SpellProps {
-  name: String;
-  desc: [String];
-  range: String;
-  components: [String?];
-  material?: String;
-  ritual: Boolean;
-  duration: String;
-  casting_time: String;
-  level: Number;
-  attack_type?: String;
+  name: string;
+  desc: [string];
+  range: string;
+  components: [string?];
+  material?: string;
+  ritual: boolean;
+  duration: string;
+  casting_time: string;
+  level: number;
+  attack_type?: string;
 }
 
 export default SpellProps;

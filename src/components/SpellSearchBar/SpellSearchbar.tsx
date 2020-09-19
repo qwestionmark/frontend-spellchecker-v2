@@ -2,10 +2,10 @@ import React from "react";
 
 import { TextField } from "@material-ui/core";
 
-const SpellSearchbar = ({ onChangeName }) => {
+const SpellSearchbar = ({ onChange }) => {
   return (
-    <form>
-      <TextField onChange={(e) => onChangeName(e.target.value)} label="Name" />
+    <form onChange={onChange}>
+      <TextField label="Name" name="name" />
     </form>
   );
 };

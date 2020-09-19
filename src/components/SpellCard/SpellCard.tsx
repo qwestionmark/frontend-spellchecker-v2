@@ -12,9 +12,7 @@ const SpellCard = ({ name, desc, range, casting_time }: SpellProps) => {
           <Typography variant="h6" align="center">
             {name}
           </Typography>
-          <Typography>
-            <LinesEllipsis maxLine={4} text={desc[0]} basedOn="letters" />
-          </Typography>
+          <LinesEllipsis maxLine={4} text={desc[0]} basedOn="letters" />
         </CardContent>
       </Card>
     </Grid>
