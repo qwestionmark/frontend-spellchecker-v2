@@ -6,18 +6,14 @@ import SpellResults from "../components/SpellResults/SpellResults";
 import SpellSearchbar from "../components/SpellSearchBar/SpellSearchbar";
 
 const SpellBook = () => {
-  const [searchFilters, setsearchFilters] = useState({
+  const [searchFilters, setSearchFilters] = useState({
     name: "",
   });
-  const handleFilterChange = (e) => {
-    const newFilters = { ...searchFilters, [e.target.name]: e.target.value };
-    setsearchFilters(newFilters);
-  };
   const { filteredSpells, loading, error } = useSpellFilter(searchFilters);
 
   return (
     <>
-      <SpellSearchbar onChange={handleFilterChange} />
+      <SpellSearchbar onSubmit={setSearchFilters} />
       <SpellResults spells={filteredSpells} loading={loading} error={error} />
     </>
   );

@@ -11,13 +11,9 @@ function useSpellFilter(filters) {
     // If spells isn't empty and search query is long enough to be meaningful, then filter, else return all
     let filteredSpells: SpellProps[] = [];
     if (data && data.spells) {
-      if (filters.name.length < 3) {
-        filteredSpells = data.spells.filter((spell) =>
-          spell.name.match(new RegExp(filters.name, "gi"))
-        );
-      } else {
-        filteredSpells = data.spells;
-      }
+      filteredSpells = data.spells.filter((spell) =>
+        spell.name.match(new RegExp(filters.name, "gi"))
+      );
     }
     return { filteredSpells, loading, error };
   }, [data, filters, loading, error]);

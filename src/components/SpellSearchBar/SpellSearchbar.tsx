@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useRef } from "react";
 
-import { TextField } from "@material-ui/core";
+import { TextField, Button } from "@material-ui/core";
 
-const SpellSearchbar = ({ onChange }) => {
+const SpellSearchbar = ({ onSubmit }) => {
+  const searchFilters = useRef({
+    name: "",
+  });
+
+  const handleChange = (e) => {
+    const newFilters = {
+      ...searchFilters.current,
+      [e.target.name]: e.target.value,
+    };
+    searchFilters.current = newFilters;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(searchFilters.current);
+  };
+
   return (
-    <form onChange={onChange}>
+    <form onChange={handleChange} onSubmit={handleSubmit}>
       <TextField label="Name" name="name" />
+      <Button type="submit">Search</Button>
     </form>
   );
 };
