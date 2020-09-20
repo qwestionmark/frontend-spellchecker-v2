@@ -27,11 +27,11 @@ const SpellResults = ({ spells, loading, error, selectSpell }) => {
               />
             ))
           )}
+          <ScrollTopButton />
         </Grid>
-        <ScrollTopButton />
       </>
     );
-  }, [spells, error, loading]);
+  }, [spells, error, loading, selectSpell]);
 };
 
 export default SpellResults;
