@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import CircleLoader from "react-spinners/CircleLoader";
 
 // MUI imports
 import { Grid } from "@material-ui/core";
@@ -17,7 +18,10 @@ const SpellResults = ({ spells, loading, error, selectSpell }) => {
           {error ? (
             <p>{`Error! ${error.message}`}</p>
           ) : loading ? (
-            <p>Loading...</p>
+            <div className="rotate">
+              {/* NOTE: react-spinners sizing is not responsive by default. Will need to adjust for mobile */}
+              <CircleLoader size={"35rem"} color="#8080ff"></CircleLoader>
+            </div>
           ) : (
             spells.map((spell: SpellProps) => (
               <SpellCard
