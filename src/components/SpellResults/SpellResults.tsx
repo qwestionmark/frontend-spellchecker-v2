@@ -8,7 +8,7 @@ import SpellCard from "../SpellCard/SpellCard";
 import ScrollTopButton from "../ScrollTopButton/ScrollTopButton";
 import SpellProps from "../../types/SpellProps";
 
-const SpellResults = ({ spells, loading, error }) => {
+const SpellResults = ({ spells, loading, error, selectSpell }) => {
   return useMemo(() => {
     return (
       <>
@@ -20,7 +20,11 @@ const SpellResults = ({ spells, loading, error }) => {
             <p>Loading...</p>
           ) : (
             spells.map((spell: SpellProps) => (
-              <SpellCard {...spell} key={spell.name} />
+              <SpellCard
+                spell={spell}
+                selectSpell={selectSpell}
+                key={spell.name}
+              />
             ))
           )}
         </Grid>

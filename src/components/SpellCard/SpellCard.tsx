@@ -4,10 +4,15 @@ import SpellProps from "../../types/SpellProps";
 import "./SpellCard.scss";
 import LinesEllipsis from "react-lines-ellipsis";
 
-const SpellCard = ({ name, desc, range, casting_time }: SpellProps) => {
+const SpellCard = ({ spell, selectSpell }) => {
+  const { name, desc, range, casting_time } = spell;
   return (
     <Grid item>
-      <Card raised={true} className="SpellCard">
+      <Card
+        raised={true}
+        className="SpellCard"
+        onClick={() => selectSpell(spell)}
+      >
         <CardContent>
           <Typography variant="h6" align="center">
             {name}
