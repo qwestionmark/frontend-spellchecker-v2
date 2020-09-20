@@ -29,7 +29,7 @@ const ScrollTopButton = (): JSX.Element => {
         title="Scroll to top"
         placement="top"
         aria-label="Scroll to top"
-        leaveDelay={750}
+        leaveDelay={500}
       >
         <Paper
           className={`ScrollTopButton__paper ${scrollButtonStyles.root}`}
