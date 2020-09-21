@@ -7,7 +7,6 @@ import {
 } from "@material-ui/core";
 
 const SingleSpellModal = ({ isOpen, setOpen, spell }) => {
-  console.log(spell);
   const {
     name,
     casting_time,

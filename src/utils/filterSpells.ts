@@ -19,7 +19,6 @@ const filterSpells = (spells: SpellProps[], spellQuery) => {
           const spellStringQuery = new RegExp(spellQuery[filterKey], "i");
           return spellStringQuery.test(spell[filterKey]);
         case "boolean":
-          console.log(filterDataType, filterKey);
           return spell[filterKey] === spellQuery[filterKey];
         case "number":
           return spell[filterKey] === spellQuery[filterKey];
