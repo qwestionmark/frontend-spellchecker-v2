@@ -1,18 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent, Typography, Grid } from "@material-ui/core";
 import SpellProps from "../../types/SpellProps";
 import "./SpellCard.scss";
 import LinesEllipsis from "react-lines-ellipsis";
+import SingleSpellModal from "../SingleSpellModal/SingleSpellModal";
 
-const SpellCard = ({ spell, selectSpell }) => {
-  const { name, desc, range, casting_time } = spell;
+const SpellCard = ({ spell }) => {
+  const { name, desc } = spell;
+  const [isOpen, setOpen] = useState(false);
   return (
     <Grid item>
-      <Card
-        raised={true}
-        className="SpellCard"
-        onClick={() => selectSpell(spell)}
-      >
+      <Card raised={true} className="SpellCard" onClick={() => setOpen(spell)}>
         <CardContent>
           <Typography variant="h6" align="center">
             {name}
@@ -20,6 +18,7 @@ const SpellCard = ({ spell, selectSpell }) => {
           <LinesEllipsis maxLine={4} text={desc[0]} basedOn="letters" />
         </CardContent>
       </Card>
+      <SingleSpellModal isOpen={isOpen} setOpen={setOpen} spell={spell} />
     </Grid>
   );
 };

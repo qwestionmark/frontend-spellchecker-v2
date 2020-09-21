@@ -9,7 +9,7 @@ import SpellCard from "../SpellCard/SpellCard";
 import ScrollTopButton from "../ScrollTopButton/ScrollTopButton";
 import SpellProps from "../../types/SpellProps";
 
-const SpellResults = ({ spells, loading, error, selectSpell }) => {
+const SpellResults = ({ spells, loading, error }) => {
   return useMemo(() => {
     return (
       <>
@@ -24,18 +24,14 @@ const SpellResults = ({ spells, loading, error, selectSpell }) => {
             </div>
           ) : (
             spells.map((spell: SpellProps) => (
-              <SpellCard
-                spell={spell}
-                selectSpell={selectSpell}
-                key={spell.name}
-              />
+              <SpellCard spell={spell} key={spell.name} />
             ))
           )}
           <ScrollTopButton />
         </Grid>
       </>
     );
-  }, [spells, error, loading, selectSpell]);
+  }, [spells, error, loading]);
 };
 
 export default SpellResults;
