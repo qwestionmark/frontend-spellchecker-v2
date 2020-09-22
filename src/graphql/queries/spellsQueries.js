@@ -10,17 +10,24 @@ export default gql`
       material
       ritual
       duration
-      casting_time
+      castingTime
       level
-      attack_type
-      school {
-        name
+      attackType
+      damageType
+      classes
+      school
+      subclasses
+      damageAtSlotLevel {
+        first
       }
-      classes {
-        name
+      higherLevel
+      areaOfEffect {
+        type
+        size
       }
-      subclasses {
-        name
+      dc {
+        type
+        success
       }
     }
   }

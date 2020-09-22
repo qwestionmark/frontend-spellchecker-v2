@@ -15,7 +15,8 @@ const SpellCard = ({ spell }) => {
           <Typography variant="h6" align="center">
             {name}
           </Typography>
-          <LinesEllipsis maxLine={4} text={desc[0]} basedOn="letters" />
+
+          <LinesEllipsis maxLine={4} text={desc.join("\n")} basedOn="letters" />
         </CardContent>
       </Card>
       <SingleSpellModal isOpen={isOpen} setOpen={setOpen} spell={spell} />

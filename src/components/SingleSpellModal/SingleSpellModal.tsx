@@ -26,7 +26,7 @@ const SingleSpellModal = ({ isOpen, setOpen, spell }) => {
     <Dialog open={isOpen} onClose={handleClose}>
       <DialogTitle>{name}</DialogTitle>
       <DialogContent>
-        <Typography>{desc[0]}</Typography>
+        <Typography>{desc.join("\n")}</Typography>
         <Typography>
           Classes: {classes.map((elem) => elem.name).join(" & ")}
         </Typography>
